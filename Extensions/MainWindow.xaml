@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="textBox" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Stretch" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="textBox" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="{Binding TextValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         <Button Content="Добавить в список" Click="AddToList_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,40,0,0"/>
-        <TextBlock x:Name="charCountTextBlock" Text="Символов введено: 0" Margin="10,70,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <TextBlock x:Name="listCountTextBlock" Text="Элементов в списке: 0" Margin="10,100,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <ListBox x:Name="listBox" Margin="10,130,10,10" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+        <TextBlock x:Name="charCountTextBlock" Text="{Binding CharCount, Mode=OneWay}" Margin="10,70,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBlock x:Name="listCountTextBlock" Text="{Binding ItemsCount, Mode=OneWay}" Margin="10,100,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <ListBox x:Name="listBox" Margin="10,130,10,10" VerticalAlignment="Top" HorizontalAlignment="Stretch" ItemsSource="{Binding ItemsList}"/>
     </Grid>
 </Window>
